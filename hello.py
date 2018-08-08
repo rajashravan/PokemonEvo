@@ -3,8 +3,13 @@ import requests
 import json
 app = Flask(__name__)
 
+@app.route("/")
+def noPoke():
+	return render_template('noPoke.html')
+
 @app.route("/<pokemon>")	
 def getEvo(pokemon):
+
 	# Step 1 - get Species of pokemon
 	response = requests.get("https://pokeapi.co/api/v2/pokemon-species/" + pokemon + "/")
 
@@ -39,7 +44,7 @@ def getEvo(pokemon):
 	spriteURL = data["sprites"]["front_default"]
 	print(spriteURL)
 	#return evo
-	return render_template('home.html', url = spriteURL)
+	return render_template('evo.html', poke = pokemon, evo = evo, url = spriteURL)
 
 if __name__ == '__main__':
 	app.run(debug=True)
