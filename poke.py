@@ -1,5 +1,7 @@
 import requests
 import json
+from flask import Flask 
+
 
 # Returns the name (string) of the evolution of the given pokemon
 # Side effect: Prints evolution statement
@@ -31,14 +33,23 @@ def getEvo(pokemon):
 		return 
 	evo = evoChain["evolves_to"][0]["species"]["name"]
 	print(name + " evolves into " + evo)
+
+	# Step 4 - get sprite of next evolution
+	response = requests.get("https://pokeapi.co/api/v2/pokemon/" + evo)
+	data = response.json()
+	spriteURL = data["sprites"]["front_default"]
+	print(spriteURL)
 	return evo
 
 
-pm_name = raw_input("Please enter your Pokemon's name or ID: ")
+pm_name = input("Please enter your Pokemon's name or ID: ")
 getEvo(pm_name)
 
 
 
+
+
+	
 
 
 
