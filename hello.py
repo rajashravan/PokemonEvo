@@ -39,7 +39,7 @@ def getEvo(pokemon):
 	spriteURL = data["sprites"]["front_default"]
 	print(spriteURL)
 	#return evo
-	return render_template('home.html', url = evo)
+	return render_template('home.html', url = spriteURL)
 
 if __name__ == '__main__':
 	app.run(debug=True)
