@@ -2,7 +2,7 @@
 
 Python app (using the Flask framework) that gives you information on a given Pokemon (like a PokeDex)
 
-*Note: the API can be a little slow at times and I haven't implemented a cache yet so it may be slow at times*
+*Note: the API can be a little slow at times and I haven't implemented a cache yet so give the app a few seconds to run after inputting your pokemon*
 
 Instructions: (To be completed)
 
