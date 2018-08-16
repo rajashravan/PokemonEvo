@@ -2,24 +2,69 @@
 
 {% block body %}
 <div class="media">
-  <img class="mr-3" src="{{ poke_URL }}" alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0">{{  poke  }}</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-    {% for evo in evo_list%}
-    <div class="media mt-3">
-      <a class="pr-3" href="#">
-        <img src="{{ evo_URL }}" alt="Generic placeholder image">
-      </a>
-      <div class="media-body">
-        <h5 class="mt-0">{{  evo  }}</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-      </div>
-    </div>
-	{% endfor %}
-
-
-  </div>
+	<img class="mr-3" src="{{ poke_URL }}" alt="Generic placeholder image">
+	<div class="media-body">
+		<h5 class="mt-0">{{  name  }}</h5>
+		{{  flavor_text  }}
+		{% for evo in evo_list%}
+		<div class="media mt-3">
+			<a class="pr-3" href="#">
+				<img src="{{ evo['url'] }}" alt="Generic placeholder image">
+			</a>
+			<div class="media-body">
+				<h5 class="mt-0">{{  evo["name"]  }}</h5>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
 </div>
+
+<div class="accordion" id="info">
+	<!--Stats-->
+	<div class="card" id="stats">
+		<div class="card-header">
+			<h5 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					Stats
+				</button>
+			</h5>
+		</div>
+
+		<div id="collapseOne" class="collapse" aria-labelledby="stats" data-parent="#info">
+			<div class="card-body">
+				<ul class="list-group">
+				  <li class="list-group-item">HP : {{  poke.stats["hp"]  }}</li>
+				  <li class="list-group-item">Speed : {{  poke.stats["speed"]  }}</li>
+				  <li class="list-group-item">Attack : {{  poke.stats["attack"]  }}</li>
+				  <li class="list-group-item">Defence : {{  poke.stats["defense"]  }}</li>
+				  <li class="list-group-item">Special Attack : {{  poke.stats["special-attack"]  }}</li>
+				  <li class="list-group-item">Special Defense : {{  poke.stats["special-defense"]  }}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--Moves-->
+	<div class="card" id="moves">
+		<div class="card-header">
+			<h5 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
+					Moves
+				</button>
+			</h5>
+		</div>
+
+		<div id="collapseTwo" class="collapse" aria-labelledby="moves" data-parent="#info">
+			<div class="card-body">
+				<ul class="list-group">
+					{% for move in poke.moves %}
+					<li class="list-group-item">{{move}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 {% endblock %}
