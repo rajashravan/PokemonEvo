@@ -3,13 +3,32 @@
 {% block body %}
 	<div class="container">
 		<div class="row justify-content-center">
-			<p>
-			Please give me a pokemon! Try typing in a pokemon name in the URL.
-			</p>
-		</div>
-		<div class="row justify-content-center">
-			<p>Example: add /charmander to the end of the URL
-			</p>
+			<div class="form-group">
+		      <label for="usr">Name of Pokemon:</label>
+		      <input type="text" class="form-control" id="in">
+		      <br>
+		      <button 
+		      type="button" class="btn btn-primary btn-lg" 
+		      onclick="myFunction()" id="send">
+		      Go!
+		  </button>
+			</div>
 		</div>
 	</div>
+
+	<script>
+	//event listener if user clicks ENTER - simulate 
+	var input = document.getElementById("in");
+	input.addEventListener("keyup", function(event) {
+	    event.preventDefault();
+	    if (event.keyCode === 13) {
+	        document.getElementById("send").click();
+	    }
+	});
+
+	function myFunction() {
+	    poke = document.getElementById("in").value.toLowerCase();
+	    window.location="/" + poke;
+	}
+	</script>
 {% endblock %}

@@ -1,13 +1,25 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-	<div class="container">
-		<div class="row justify-content-center">
-			<p>The evolution of {{  poke  }} is {{  evo  }}</p>
-		</div>
-		<div class="row justify-content-center">
-			<img src="{{ url }}">
-		</div>
-		
-	</div>
+<div class="media">
+  <img class="mr-3" src="{{ poke_URL }}" alt="Generic placeholder image">
+  <div class="media-body">
+    <h5 class="mt-0">{{  poke  }}</h5>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+    {% for evo in evo_list%}
+    <div class="media mt-3">
+      <a class="pr-3" href="#">
+        <img src="{{ evo_URL }}" alt="Generic placeholder image">
+      </a>
+      <div class="media-body">
+        <h5 class="mt-0">{{  evo  }}</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+      </div>
+    </div>
+	{% endfor %}
+
+
+  </div>
+</div>
 {% endblock %}
