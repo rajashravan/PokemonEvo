@@ -12,7 +12,7 @@ python app.py
 ```
 go to http://localhost:5000
 
-Made with the open-source Pokeapi: https://pokeapi.co/
+Made with the open-source PokeAPI: https://pokeapi.co/
 
 Used Bootstrap for styling
 
