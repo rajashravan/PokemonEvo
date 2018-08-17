@@ -1,34 +1,36 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="form-group">
-		      <label for="usr">Name of Pokemon:</label>
-		      <input type="text" class="form-control" id="in">
-		      <br>
-		      <button 
-		      type="button" class="btn btn-primary btn-lg" 
-		      onclick="myFunction()" id="send">
-		      Go!
-		  </button>
-			</div>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="form-group">
+			<label for="usr">Enter Name of Pokemon:</label>
+			<input type="text" class="form-control" id="in">
+			<br>
+			<div class="text-center">
+				<button 
+				type="button" class="btn btn-primary btn-lg center-block" 
+				onclick="myFunction()" id="send">
+				Go!
+			</button>
 		</div>
 	</div>
+</div>
+</div>
 
-	<script>
+<script>
 	//event listener if user clicks ENTER - simulate 
 	var input = document.getElementById("in");
 	input.addEventListener("keyup", function(event) {
-	    event.preventDefault();
-	    if (event.keyCode === 13) {
-	        document.getElementById("send").click();
-	    }
+		event.preventDefault();
+		if (event.keyCode === 13) {
+			document.getElementById("send").click();
+		}
 	});
 
 	function myFunction() {
-	    poke = document.getElementById("in").value.toLowerCase();
-	    window.location="/" + poke;
+		poke = document.getElementById("in").value.toLowerCase();
+		window.location="/" + poke;
 	}
-	</script>
+</script>
 {% endblock %}
