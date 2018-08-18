@@ -4,7 +4,9 @@ Python app (using the Flask framework) that gives you information on a given Pok
 
 *Note: the API can be a little slow at times and I haven't implemented a cache yet so give the app a few seconds to run after inputting your pokemon*
 
-Instructions: (To be completed)
+Simply go to https://pokemon-evo.herokuapp.com to run!
+
+Instructions to run locally : (To be completed)
 
 Download folder and cd into folder.
 ```
