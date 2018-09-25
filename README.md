@@ -17,6 +17,6 @@ go to http://localhost:5000
 
 Made with the open-source PokeAPI: https://pokeapi.co/
 
-Used Bootstrap for styling
+Used Bootstrap for styling.
 
 ![Alt text](images/sc1.png?raw=true "Screenshot")
